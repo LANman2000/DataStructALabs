@@ -79,20 +79,21 @@ int main() {
     ADT myStack("stack");
     ADT myQueue("queue");
 
-    pop(myStack); // should show underflow
-    push(myStack, 5); // size should be 1
+    if (pop(myStack) != 0) std::cout << "Pop failed" << std::endl; // should show underflow
+    if (push(myStack, 5) != 0) std::cout << "Push failed" << std::endl; // size should be 1
     std::cout << "Capacity: " << myStack.data->capacity() << std::endl;
-    push(myStack, 10); // size should be 2
+    if (push(myStack, 10) != 0) std::cout << "Push failed" << std::endl; // size should be 2
     std::cout << "Capacity: " << myStack.data->capacity() << std::endl; //capacity should have increased
-    pop(myStack); // size should be 1
-    push(myStack, 15); // size should be 2
+    if (pop(myStack) != 0) std::cout << "Pop failed" << std::endl; // size should be 1
+    if (push(myStack, 15) != 0) std::cout << "Push failed" << std::endl; // size should be 2
     status(myStack);
 
-    dequeue(myQueue); // should show underflow
-    enqueue(myQueue, 15); // size should be 1
-    enqueue(myQueue, 20); // size should be 2
-    dequeue(myQueue); // size should be 1
-    enqueue(myQueue, 25); // size should be 2
+    if (dequeue(myQueue) != 0) std::cout << "Dequeue failed" << std::endl;
+    
+    if (enqueue(myQueue, 15) != 0) std::cout << "Enqueue failed" << std::endl; // size should be 1
+    if (enqueue(myQueue, 20) != 0) std::cout << "Enqueue failed" << std::endl; // size should be 2
+    if (dequeue(myQueue) != 0) std::cout << "Dequeue failed" << std::endl; // size should be 1
+    if (enqueue(myQueue, 25) != 0) std::cout << "Enqueue failed" << std::endl; // size should be 2
     status(myQueue);
 
     //error handling 
