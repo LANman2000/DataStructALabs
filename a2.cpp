@@ -1,6 +1,8 @@
 /*
     A2.cpp
 
+    Lab A2 for Data structures 010, Spring 2026
+
 */
 
 #include <iostream>
